@@ -21,9 +21,24 @@ fetch(utils.API_URL)
 
     function createPromotion() {
         const nameInput = document.getElementById("new-promotion-name");
+        const startInput = document.getElementById("new-promotion-startdate");
+        const endInput = document.getElementById("new-promotion-enddate");
         console.log(nameInput.value);
+        
+        fetch(utils.API_URL, {
+            method: 'POST',
+            headers: new Headers({'content-type': 'application/json'}),
+            body: JSON.stringify({
+                name: nameInput.value,
+                startDate: startInput.value,
+                endDate: endInput.value,
+                students: []
+            })
 
-    }
+
+        }
+
+        )}
 
     export default {
         getAll : getPromotions,
