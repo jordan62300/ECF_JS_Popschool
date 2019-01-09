@@ -9,10 +9,15 @@ fetch(utils.API_URL)
        const promotions = json['hydra:member'];
        console.log(promotions);
        const list = document.querySelector('.students-list');
+       list.innerHTML = '';
 
        promotions.forEach(function(promotion) {
            const li = document.createElement('li');
-           li.textContent = promotion.name;
+           const link = document.createElement('a');
+           link.href = 'promotion.html';
+           link.textContent = promotion.name;
+
+           li.appendChild(link);
            list.appendChild(li);
        })
            
@@ -36,9 +41,14 @@ fetch(utils.API_URL)
             })
 
 
-        }
-
-        )}
+        })
+        .then(function(response){
+            getPromotions();
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+    }
 
     export default {
         getAll : getPromotions,
