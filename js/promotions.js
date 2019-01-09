@@ -19,6 +19,13 @@ fetch(utils.API_URL)
        })
     };
 
+    function createPromotion() {
+        const nameInput = document.getElementById("new-promotion-name");
+        console.log(nameInput.value);
+
+    }
+
     export default {
-        getAll : getPromotions
+        getAll : getPromotions,
+        create : createPromotion
     }
