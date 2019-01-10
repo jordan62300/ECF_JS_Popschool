@@ -5,9 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="js/index.js" type="module" defer></script>
+    <script src="js/promotionindex.js" type="module" defer></script>
 </head>
 <body>
     <h1>Détails des promotions</h1>
+
+    <br>
+
+    <h2>Editer une promotion</h2>
+
+    <form id="edit-promotion">
+
+            <div>
+                    <label for="new-promotion-name">Nom de la promotion</label>
+                    <input type="text" name="name" id="promotion-name">   
+            </div>
+            <div>
+                    <label for="promotion-startdate">Date de début</label>
+                    <input type="date" name="startDate" id="promotion-startdate"> 
+        
+            </div>
+          <div>
+                <label for="promotion-enddate">fin de la promotion</label>
+                <input type="date" name="enddate" id="promotion-enddate"> 
+    
+          </div>
+
+           
+           
+            <input type="submit" value="Editer">
+        </form>
 </body>
 </html>
