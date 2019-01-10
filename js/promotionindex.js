@@ -15,5 +15,12 @@ function init() {
     
 }
 
+const deleteBtn = document.querySelector('#delete-btn')
+deleteBtn.addEventListener('click', function() {
+    const deleteConfirm = document.querySelector('#delete-confirm');
+
+    deleteConfirm.style.display = 'block';
+})
+
 
 document.addEventListener('DOMContentLoaded',init);
