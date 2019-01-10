@@ -96,12 +96,12 @@ fetch(utils.API_URL)                // recupere L'url de l'API dans le fichier u
         });
     }
 
-    function deletePromotion(id) {
+    function deletePromotion(id) {                  // function qui supprime les promotions
         fetch(utils.API_URL + '/' + id,{
             method: 'DELETE'
         })
         .then(function(response){
-            document.location.href = 'http://localhost:8000';
+            document.location.href = 'http://localhost:8000'; // Renvoit a la page index.html
         })
         .catch(function(error) {
             console.log(error);
