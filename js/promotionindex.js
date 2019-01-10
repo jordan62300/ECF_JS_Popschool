@@ -13,14 +13,26 @@ function init() {
         promotions.update(promotionID);
     })
     
-}
 
-const deleteBtn = document.querySelector('#delete-btn')
+
+const deleteBtn = document.querySelector('#delete-btn');
 deleteBtn.addEventListener('click', function() {
     const deleteConfirm = document.querySelector('#delete-confirm');
 
     deleteConfirm.style.display = 'block';
 })
 
+const confirmBtn = document.querySelector('#delete-confirm-yes');
+const cancelBtn =   document.querySelector('#delete-confirm-no');
+
+cancelBtn.addEventListener('click', function() {
+    deleteConfirm.style.display = 'none';
+});
+
+confirmBtn.addEventListener('click', function() {
+    promotions.delete(promotionID);
+});
+
+}
 
 document.addEventListener('DOMContentLoaded',init);

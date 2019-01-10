@@ -56,27 +56,27 @@ fetch(utils.API_URL)                // recupere L'url de l'API dans le fichier u
        return response.json();
    })
    .then(function(json){
-      const nameInput = document.querySelector('#promotion-name');
+      const nameInput = document.querySelector('#promotion-name');                  // stock le champ ayant l'id promotion name dans nameInput
       const startInput = document.querySelector('#promotion-startdate');
       const endInput = document.querySelector('#promotion-enddate');
 
-      const startDate = new Date(json.startDate);
-      const endDate = new Date(json.endDate);
+      const startDate = new Date(json.startDate);                           // Creer l'objet startDate
+      const endDate = new Date(json.endDate);                               // creer l'objet endDate
       
-      nameInput.value = json.name; 
+      nameInput.value = json.name;                                        // mettre le nom de la promo dans le champ du nom de promo
       
-        startInput.value = utils.formatDate(startDate);
-        endInput.value= utils.formatDate(endDate);
+        startInput.value = utils.formatDate(startDate);             // mets la date de début de la promo dans le champ début de date
+        endInput.value= utils.formatDate(endDate);                   // mets la date de fin de la promo dans le champ fin de date
         
        });
     }
 
-    function updatePromotion(id) {
+    function updatePromotion(id) {                          // fonction qui modifier les promos
         const nameInput = document.querySelector('#promotion-name');
         const startInput = document.querySelector('#promotion-startdate');
         const endInput = document.querySelector('#promotion-enddate');
 
-        fetch(utils.API_URL + '/' + id, {                                                // récupere l'url de l'api et ajoute comme parrametre un POST qui permet d'ajouter des promotions en fonctions des information passer dans les champs
+        fetch(utils.API_URL + '/' + id, {                                                // récupere l'url de l'api et ajoute comme parrametre un PUT qui permet de modifier des promotions en fonctions des information passer dans les champs
             method: 'PUT',
             headers: new Headers({'content-type': 'application/json'}),
             body: JSON.stringify({
@@ -89,7 +89,19 @@ fetch(utils.API_URL)                // recupere L'url de l'API dans le fichier u
 
         })
         .then(function(response){
-            document.location.href = 'http://localhost:8000'
+            document.location.href = 'http://localhost:8000'       // renvoit  a l'adresse localhost:8000 (donc dans l'index.html)
+        })
+        .catch(function(error) {
+            console.log(error);                                    // message d'erreur en cas d'erreur
+        });
+    }
+
+    function deletePromotion(id) {
+        fetch(utils.API_URL + '/' + id,{
+            method: 'DELETE'
+        })
+        .then(function(response){
+            document.location.href = 'http://localhost:8000';
         })
         .catch(function(error) {
             console.log(error);
@@ -98,8 +110,9 @@ fetch(utils.API_URL)                // recupere L'url de l'API dans le fichier u
 
 
     export default {
-        getAll : getPromotions,
+        getAll : getPromotions,                                             // export les functions
         create : createPromotion,
         get: getPromotion,
-        update: updatePromotion
+        update: updatePromotion,
+        delete: deletePromotion
     }
