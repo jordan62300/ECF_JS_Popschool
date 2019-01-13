@@ -34,7 +34,7 @@ confirmBtn.addEventListener('click', function() {               // au click sur 
     promotions.delete(promotionID);                             // appelle la fonction deletePromotion 
 });
 
-students.getStudent();
+students.getStudent(promotionID);
 
 }
 
