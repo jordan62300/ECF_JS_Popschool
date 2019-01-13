@@ -1,4 +1,5 @@
 import promotions from './promotions.js';
+import students from './students.js';
 
 function init() {
     const url = new URL(window.location.href);                   // Recupere l'url et la stock dans url
@@ -32,6 +33,8 @@ cancelBtn.addEventListener('click', function() {                // au click sur 
 confirmBtn.addEventListener('click', function() {               // au click sur le bouton valider
     promotions.delete(promotionID);                             // appelle la fonction deletePromotion 
 });
+
+students.getStudent();
 
 }
 

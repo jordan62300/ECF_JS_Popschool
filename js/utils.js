@@ -1,4 +1,4 @@
-function formatDate(date) {
+function formatDate(date) {                     // fonction permettant de mettre la date dans un format correcte ( yy - mm - dd)
 let year = date.getFullYear();                  // recupere l'année en yyyy
 let month = date.getMonth();                     // recupere le mois
 let day = date.getDate();                          // recupere le jour
@@ -22,3 +22,22 @@ export default {
     API_URL : 'http://api-students.popschool-lens.fr/api/promotions',           // export l'api
     formatDate : formatDate                                                     // export la fonction formatDate
 }
+
+
+/* @id": "/api/students/1"
+​​​
+"@type": "Student"
+​​​
+birthdate: null
+​​​
+firstname: "Alexandre"
+​​​
+id: 1
+​​​
+lastname: "Mahieu"
+​​​
+promotion: "/api/promotions/1"
+​​​
+sex: null
+
+*/

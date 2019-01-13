@@ -1,6 +1,6 @@
 import utils from './utils.js';
 
-function getPromotions() {
+function getPromotions() {          // recupere les promotions
 fetch(utils.API_URL)                // recupere L'url de l'API dans le fichier utils
    .then(function(response) {
        return response.json();
@@ -9,7 +9,7 @@ fetch(utils.API_URL)                // recupere L'url de l'API dans le fichier u
        const promotions = json['hydra:member'];                 // recupere les promotions et les stocks dans la variable
        console.log(promotions);                                 // Affiche toutes les promos dans la console
        const list = document.querySelector('.students-list');   // selectionne la balise ul
-       list.innerHTML = '';                                      // supprime les valeurs affichées
+       list.innerHTML = ' ';                                      // supprime les valeurs affichées
        promotions.forEach(function(promotion) {                    // check les promotions une par une
            const li = document.createElement('li');                 // stock la creation d'une balise li dans var li
            const link = document.createElement('a');                // ''         ''          lien dans var link
