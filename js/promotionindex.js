@@ -36,6 +36,12 @@ confirmBtn.addEventListener('click', function() {               // au click sur 
 
 students.getStudent(promotionID);
 
+const newStudent = document.querySelector('#edit-student');
+newStudent.addEventListener('submit', function(e) {
+    e.preventDefault();
+    students.createStudent(promotionID);
+})
+
 }
 
 document.addEventListener('DOMContentLoaded',init);           // Appelle la fonction init lorsque le code HTMl est chargé
