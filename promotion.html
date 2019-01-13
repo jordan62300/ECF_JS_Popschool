@@ -8,53 +8,56 @@
     <script src="js/promotionindex.js" type="module" defer></script>
 </head>
 <body>
-    <h1>Détails des promotions</h1>
+    <h1>Promotions details</h1>
 
     <br>
 
-    <h2>Editer une promotion</h2>
+    <h2>Edit a promotion</h2>
 
     <form id="edit-promotion">
 
             <div>
-                    <label for="new-promotion-name">Nom de la promotion</label>
+                    <label for="new-promotion-name">Promotion name</label>
                     <input type="text" name="name" id="promotion-name">   
             </div>
             <div>
-                    <label for="promotion-startdate">Date de début</label>
+                    <label for="promotion-startdate">Start date</label>
                     <input type="date" name="startDate" id="promotion-startdate"> 
         
             </div>
           <div>
-                <label for="promotion-enddate">fin de la promotion</label>
+                <label for="promotion-enddate">End date</label>
                 <input type="date" name="enddate" id="promotion-enddate"> 
     
           </div>
 
            
            
-            <input type="submit" value="Editer">
+            <input type="submit" value="Edit">
         </form>
 
-        <button id="delete-btn" type="submit"> Supprimer </button>
+        <button id="delete-btn" type="submit"> Delete </button>
         <div id="delete-confirm" style="display: none; color: red">
-                Voulez vous vraiment supprimer cette promotion?
+                        Do you really want to delete this promotion?
                 <button id="delete-confirm-yes" type="button">Oui</button>
                 <button id="delete-confirm-no" type="button">Non</button>
 
         </div>
         <h1>Student List</h1>
         <ul class="list">
-
+                <li> <p> Loading ... </p></li>
         </ul>
         
         <form id="edit-student">
 
                  <div>
-                         <label for="new-student-name">Nom de l'élève</label>
+                         <label for="new-student-name">Student name</label>
                         <input type="text" name="name" id="student-name">   
+                        <label for="student-name"> Student last name</label>
+                          <input type="text" id="student-lastname">
+                       
                 </div>       
-                <input type="submit" value="Creer">
+                <input type="submit" value="Create">
         </form>
         
 </body>

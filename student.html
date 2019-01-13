@@ -6,10 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./js/studentindex.js" type="module" defer></script>
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
 </head>
 <body>
     <a href="./promotion.html">Student's promotion</a>
-   <h1>Students</h1>
-   <ul id="list-student"></ul>
+   <h1>Student</h1>
+   
+       <div class="block">
+        <label for="student-name"> Student's first name</label>
+        <input type="text" id="student-name">
+        <label for="student-lastname"> Student's last name</label>
+        <input type="text" id="student-lastname">
+        <label for="student-promotion"> Student's id</label>
+        <input type="text" id="student-id">
+       </div>
+       <button id="delete-btn"> Delete Student</button>
+   
 </body>
 </html>

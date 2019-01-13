@@ -1,0 +1,13 @@
+#output {
+    width: 100px;
+    height: 100px;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 200px;
+}
