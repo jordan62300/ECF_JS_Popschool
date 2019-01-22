@@ -5,7 +5,7 @@ function init() {
     const url = new URL(window.location.href);                   
     const params = new URLSearchParams(url.search);                
     const promotionID = params.get('id');                          // get back the id of promotion that was in the url
-    promotions.get(promotionID);                                
+    promotions.get(promotionID);                                    // display the promotion
 
 
     const editPromotionForm = document.querySelector("#edit-promotion");
@@ -30,18 +30,18 @@ cancelBtn.addEventListener('click', function() {                // a click on th
     deleteConfirm.style.display = 'none';                       
 });
 
-confirmBtn.addEventListener('click', function() {              
+confirmBtn.addEventListener('click', function() {              // on click call the deletePromotion function wich delete the promo
     promotions.delete(promotionID);                             
 });
 
-students.getStudents(promotionID);
+students.getStudents(promotionID);                          // display all students
 
-const newStudent = document.querySelector('#edit-student');
-newStudent.addEventListener('submit', function(e) {
+const newStudent = document.querySelector('#edit-student');     
+newStudent.addEventListener('submit', function(e) {         // a click on the button call the createStudent function wich create a student
     e.preventDefault();
     students.createStudent(promotionID);
 })
 
 }
 
-document.addEventListener('DOMContentLoaded',init);           // Appelle la fonction init lorsque le code HTMl est chargé
+document.addEventListener('DOMContentLoaded',init);           // launch de init function when the DOMContent is fully loaded

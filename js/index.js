@@ -1,12 +1,12 @@
 import promotions from './promotions.js';
 
 function init() {
-    const createPromotionForm = document.querySelector("#create-promotion");    // recupere la balise form
-    createPromotionForm.addEventListener('submit',function(e){            // au submit dans la balise form
-        e.preventDefault();                                            // empeche le rechargement de la page
-        promotions.create();                                            // Appelle la function createPromotion 
+    const createPromotionForm = document.querySelector("#create-promotion");    
+    createPromotionForm.addEventListener('submit',function(e){           
+        e.preventDefault();                                            // prevents reloading of the page
+        promotions.create();                                            // call the create function to create a promo
     })
-    promotions.getAll();                                                // recupere toutes les promotions
+    promotions.getAll();                                                // call the getpromotions function to display all the promotion
 }
 
-document.addEventListener('DOMContentLoaded',init);                     // Lance la function init lorsque tout le contenue html est chargé
+document.addEventListener('DOMContentLoaded',init);                     // launch de init function when the DOMContent is fully loaded
