@@ -2,36 +2,36 @@ import promotions from './promotions.js';
 import students from './students.js';
 
 function init() {
-    const url = new URL(window.location.href);                   // Recupere l'url et la stock dans url
+    const url = new URL(window.location.href);                   
     const params = new URLSearchParams(url.search);                
-    const promotionID = params.get('id');                          // recupere l'id de la promotion qui etait dans l'url
+    const promotionID = params.get('id');                          // get back the id of promotion that was in the url
     promotions.get(promotionID);                                
 
 
     const editPromotionForm = document.querySelector("#edit-promotion");
-    editPromotionForm.addEventListener('submit',function(e){        // losqu'un submit est fait
-        e.preventDefault();                                         // Empeche de reload la page
-        promotions.update(promotionID);    // appelle la function updatePromotion qui permet de modif les promos
+    editPromotionForm.addEventListener('submit',function(e){        
+        e.preventDefault();                                         
+        promotions.update(promotionID);    // call the function updatePromotion which allows to modify the promos
     })
     
 
 
-const deleteBtn = document.querySelector('#delete-btn');        // recupere le boutton supprimer
-deleteBtn.addEventListener('click', function() {                // au click
-    const deleteConfirm = document.querySelector('#delete-confirm');      // recupere la div ayant l'id delete-confirm
+const deleteBtn = document.querySelector('#delete-btn');        
+deleteBtn.addEventListener('click', function() {                
+    const deleteConfirm = document.querySelector('#delete-confirm');      
 
-    deleteConfirm.style.display = 'block';                  // change le display vers "block" (il est en none par defaut)
+    deleteConfirm.style.display = 'block';                 // change the display to "block" (it is in none by default)
 })
 
-const confirmBtn = document.querySelector('#delete-confirm-yes');       // recupere le boutton de confirmation positif
-const cancelBtn =   document.querySelector('#delete-confirm-no');         // recupere le boutton de confirmation negatif
+const confirmBtn = document.querySelector('#delete-confirm-yes');       
+const cancelBtn =   document.querySelector('#delete-confirm-no');        
 
-cancelBtn.addEventListener('click', function() {                // au click sur le bouton annuler
-    deleteConfirm.style.display = 'none';                       // fait disparaitre la div
+cancelBtn.addEventListener('click', function() {                // a click on the button makes it possible to make disappear the div
+    deleteConfirm.style.display = 'none';                       
 });
 
-confirmBtn.addEventListener('click', function() {               // au click sur le bouton valider
-    promotions.delete(promotionID);                             // appelle la fonction deletePromotion 
+confirmBtn.addEventListener('click', function() {              
+    promotions.delete(promotionID);                             
 });
 
 students.getStudents(promotionID);

@@ -41,3 +41,5 @@ promotion: "/api/promotions/1"
 sex: null
 
 */
+
+// <li> `<a href=promotion.html?id=${promotionID}> ${item.id} . ${item.name} </a> </li> <br>`
